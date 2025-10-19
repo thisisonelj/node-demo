@@ -8,12 +8,12 @@ const __dirname = dirname(__filename);
 
 // 模拟图片文件列表
 const imageFiles = [
-  "image1.jpg",
-  "image2.jpg",
-  "image3.jpg",
-  "image4.jpg",
-  "image5.jpg",
-  "image6.jpg",
+  "image1.svg",
+  "image2.svg",
+  "image3.svg",
+  "image4.svg",
+  "image5.svg",
+  "image6.svg",
 ];
 
 // 图片处理配置

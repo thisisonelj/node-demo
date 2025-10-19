@@ -16,15 +16,15 @@ async function processImage(imageName, config) {
   const processingTime = Math.random() * 400 + 100;
 
   // 模拟图片处理工作
-  await new Promise((resolve) => setTimeout(resolve, processingTime));
+  // await new Promise((resolve) => setTimeout(resolve, processingTime));
+  const afterImageName = imageName.replace("svg", "jpg");
 
-  // 在实际应用中，这里会是：
-  // await sharp(inputPath)
-  //   .resize(config.width, config.height)
-  //   .jpeg({ quality: config.quality })
-  //   .toFile(outputPath);
-
-  const outputFileName = `resized_${imageName}`;
+  await sharp(`${__dirname}/input-image/${imageName}`)
+    .resize(config.width, config.height)
+    .toFormat("jpg")
+    .jpeg({ quality: config.quality })
+    .toFile(`${__dirname}/output-image/${afterImageName}`);
+  const outputFileName = `resized_${afterImageName}`;
 
   return {
     input: imageName,
